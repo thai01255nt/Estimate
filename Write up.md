@@ -1,26 +1,36 @@
 # Estimation Project #
 
-Welcome to the estimation project.  In this project, you will be developing the estimation portion of the controller used in the CPP simulator.  By the end of the project, your simulated quad will be flying with your estimator and your custom controller (from the previous project)!
+## Result at each step. ##
 
-This README is broken down into the following sections:
+### Step 1. Sensor Noise ###
 
- - [Setup](#setup) - the environment and code setup required to get started and a brief overview of the project structure
- - [The Tasks](#the-tasks) - the tasks you will need to complete for the project
- - [Tips and Tricks](#tips-and-tricks) - some additional tips and tricks you may find useful along the way
- - [Submission](#submission) - overview of the requirements for your project submission
-
-
-## Setup ##
-
-This project will continue to use the C++ development environment you set up in the Controls C++ project.
-
- 1. Clone the repository
- ```
- git clone https://github.com/udacity/FCND-Estimation-CPP.git
- ```
-
- 2. Import the code into your IDE like done in the [Controls C++ project](https://github.com/udacity/FCND-Controls-CPP#development-environment-setup)
+Excute simulator in scenario '06_SensorNoise'. Then it will generate 2 files record GPS and IMU.
+I used code below to process these infomations and calculate standard deviation for GPS and IMU sensors.
+ [Calculate_std_IMU.ipynb](./Calculate_std_IMU.ipynb)
+ This is result when i run code:
  
+ - GPS Std: 0.71
+ - IMU Std: 0.488
+ 
+ Result when i re-run simulator in scenario '06_SensorNoise'
+ [06_SensorNoise](./images/Step1_1.png)
+ [output](./images/Step1_2.png)
+ 
+### Step 2. Attitude Estimation ###
+
+This step i need complete function `UpdateFromIMU()`.
+We need to implement a non-linear one to get good results. I used equation below (from controller project):
+[Euler Angles Equation](./images/EulerAnglesEquation.gif)
+
+And then use knowledge from section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete function `UpdateFromIMU()` with non-linear version.
+
+This is result when i run scenario `07_AttitudeEstimation`
+[07_AttitudeEstimation](./images/step2_1.png)
+[output](./images/step2_2.png)
+
+### Step 3. Prediction Step ###
+
+In that step, we predict current state from previous state and acceleration measurement.
  3. You should now be able to compile and run the estimation simulator just as you did in the controls project
 
 
