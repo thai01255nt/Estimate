@@ -7,6 +7,7 @@
 Excute simulator in scenario '06_SensorNoise'. Then it will generate 2 files record GPS and IMU.
 I used code below to process these infomations and calculate standard deviation for GPS and IMU sensors.
  [Calculate_std_IMU.ipynb](./Calculate_std_IMU.ipynb)
+ 
  This is result when i run code:
  
  - GPS Std: 0.71
@@ -14,18 +15,21 @@ I used code below to process these infomations and calculate standard deviation 
  
  Result when i re-run simulator in scenario '06_SensorNoise'
  ![06_SensorNoise](./images/Step1_1.png)
+ 
  ![output](./images/Step1_2.png)
  
 ### Step 2. Attitude Estimation ###
 
 This step i need complete function `UpdateFromIMU()`.
 We need to implement a non-linear one to get good results. I used equation below (from controller project):
+
 ![Euler Angles Equation](./images/EulerAnglesEquation.gif)
 
 And then use knowledge from section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete function `UpdateFromIMU()` with non-linear version.
 
 This is result when i run scenario `07_AttitudeEstimation`
 ![07_AttitudeEstimation](./images/step2_1.png)
+
 ![output](./images/step2_2.png)
 
 ### Step 3. Prediction Step ###
