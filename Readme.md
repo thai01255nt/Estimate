@@ -16,7 +16,7 @@ I used code below to process these infomations and calculate standard deviation 
  Result when i re-run simulator in scenario '06_SensorNoise'
  ![06_SensorNoise](./images/Step1_1.png)
  
- ![output](./images/Step1_2.png)
+ ![output](./images/step1_2.png)
  
 ### Step 2. Attitude Estimation ###
 
