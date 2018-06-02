@@ -49,7 +49,20 @@ Result when i run scenario `08_PredictState`
 Run scenario `09_PredictCovariance` to check the magnitude of the error.
 Result
 
-![09_PredictCovariance](./images/)
+![09_PredictCovariance](./images/step3_3)
+
+### Step 4. Magnetometer Update ###
+
+Use EKF (section 7.3.2 of [Estimation for Quadrotors](./images/https://www.overleaf.com/read/vymfngphcccj)) to combine predict yaw (from fuction `UpdateFromIMU`) with measurement yaw (from Magnetometer). And then update this value in function `UpdateFromMag`.
+
+Beside, tune the parameter QYawStd (QuadEstimatorEKF.txt).
+
+Result when i run scenario `10_MagUpdate` to test this function. (in line 343-370).
+
+![10_MagUpdate](./images/step 4_1.png)
+![output](./images/step 4_2.png)
+
+### Step 5. Closed Loop + GPS Update ###
  3. You should now be able to compile and run the estimation simulator just as you did in the controls project
 
 
