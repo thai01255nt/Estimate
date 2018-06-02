@@ -20,7 +20,7 @@ I used code below to process these infomations and calculate standard deviation 
  
 ### Step 2. Attitude Estimation ###
 
-This step i need complete function `UpdateFromIMU()`.
+This step i need complete function `UpdateFromIMU()` (in line 74-129)
 We need to implement a non-linear one to get good results. I used equation below (from controller project):
 
 ![Euler Angles Equation](./images/EulerAnglesEquation.gif)
@@ -34,7 +34,22 @@ This is result when i run scenario `07_AttitudeEstimation`
 
 ### Step 3. Prediction Step ###
 
+#### 1. Predict ####
+
 In that step, we predict current state from previous state and acceleration measurement.
+Use equation in (49) in section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete fuction `PredictState` (in line 154-190)
+
+Result when i run scenario `08_PredictState`
+
+![08_PredictState](./images/step3.png)
+![output](./images/step3_2.png)
+
+#### 2. Check the magnitude of the error ####
+
+Run scenario `09_PredictCovariance` to check the magnitude of the error.
+Result
+
+![09_PredictCovariance](./images/)
  3. You should now be able to compile and run the estimation simulator just as you did in the controls project
 
 
