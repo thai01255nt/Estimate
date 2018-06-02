@@ -63,6 +63,13 @@ Result when i run scenario `10_MagUpdate` to test this function. (in line 343-37
 ![output](./images/step 4_2.png)
 
 ### Step 5. Closed Loop + GPS Update ###
+
+I set SimIMU.AccelStd & SimIMU.GyroStd like below:
+
+`#SimIMU.AccelStd = 0,0,0`
+`#SimIMU.GyroStd = 0,0,0`
+
+
  3. You should now be able to compile and run the estimation simulator just as you did in the controls project
 
 
