@@ -37,7 +37,7 @@ This is result when i run scenario `07_AttitudeEstimation`
 #### 1. Predict ####
 
 In that step, we predict current state from previous state and acceleration measurement.
-Use equation in (49) in section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete fuction `PredictState` (in line 154-190)
+Use equation (49) in section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete fuction `PredictState` (in line 154-190)
 
 Result when i run scenario `08_PredictState`
 
@@ -68,5 +68,34 @@ I set SimIMU.AccelStd & SimIMU.GyroStd like below:
 
 `#SimIMU.AccelStd = 0.1,0.1,0.1`
 `#SimIMU.GyroStd = 0.1,0.1,0.1`
+
+And then i used equation (49) in section 7.3.1  of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) to complete fuction `UpdateFromGPS` (in line 307-341).
+
+Result when i run scenario `11_GPSUpdate` to test this function.
+
+![11_GPSUpdate](./images/step 5_1.png)
+
+### Step 6. Adding My Controller and test again scenario from previous project. ###
+
+`02_AttitudeControl`
+
+![02_AttitudeControl](./images/02.png)
+![output](./images/output_02.png)
+
+`03_PositionControl`
+
+![03_PositionControl](./images/03.png)
+![output](./images/output_03.png)
+
+`04_Nonidealities`
+
+![04_Nonidealities](./images/04.png)
+![output](./images/output_04.png)
+
+`05_TrajectoryFollow`
+
+![05_TrajectoryFollow](./images/05.png)
+![output](./images/output_05.png)
+
 
 
