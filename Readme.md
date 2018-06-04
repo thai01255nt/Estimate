@@ -49,7 +49,7 @@ Result when i run scenario `08_PredictState`
 Run scenario `09_PredictCovariance` to check the magnitude of the error.
 Result
 
-![09_PredictCovariance](./images/step3_3)
+![09_PredictCovariance](./images/step3_3.png)
 
 ### Step 4. Magnetometer Update ###
 
